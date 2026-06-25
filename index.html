@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derry Moore Number Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@600&amp;display=swap');
+        
+        :root {
+            --primary: #0ea5e9;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Poppins', system_ui, sans-serif;
+            font-weight: 600;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(14, 165, 233, 0.85), rgba(59, 130, 246, 0.75)), url('banner.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .flag-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .flag-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-active {
+            color: #0f766e;
+            font-weight: 600;
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .pricing-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .flag-img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .logo-grid img {
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-grid img:hover {
+            transform: scale(1.1);
+        }
+
+        .modern-shadow {
+            box-shadow: 0 10px 15px -3px rgb(15 118 110 / 0.1), 0 4px 6px -4px rgb(15 118 110 / 0.1);
+        }
+
+        .accent-teal {
+            color: #0f766e;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="px-8 py-5 flex justify-between items-center">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-sky-600 rounded-2xl flex items-center justify-center">
+                        <i class="fa-solid fa-globe text-white text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-3xl tracking-tighter text-slate-900">Derry Moore</span>
+                        <span class="font-semibold text-teal-700 text-xl">Number Hub</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-x-8 text-sm">
+                    <a href="#global" class="font-medium text-slate-600 hover:text-teal-700 transition-colors">Global Reach</a>
+                    <a href="#logos" class="font-medium text-slate-600 hover:text-teal-700 transition-colors">International Partners</a>
+                    <a href="#pricing" class="font-medium text-slate-600 hover:text-teal-700 transition-colors">Pricing</a>
+                    <a href="#contact" class="font-medium text-slate-600 hover:text-teal-700 transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center gap-x-3">
+                    <a href="tel:+233501185921" 
+                       class="hidden md:flex items-center px-5 py-2.5 text-sm font-semibold bg-white border border-slate-300 hover:bg-slate-50 transition-colors rounded-3xl text-slate-700">
+                        <i class="fa-solid fa-phone mr-2 text-teal-700"></i>
+                        <span>Call Us</span>
+                    </a>
+                    <button onclick="window.location.href='https://wa.me/233242806605'"
+                            class="flex items-center px-5 py-2.5 text-sm font-semibold bg-sky-600 hover:bg-sky-700 transition-all rounded-3xl text-white shadow-md">
+                        <i class="fa-brands fa-whatsapp mr-2"></i>
+                        <span>WhatsApp</span>
+                    </button>
+                    
+                    <!-- Mobile menu -->
+                    <div class="md:hidden">
+                        <button class="p-2 text-slate-500 hover:text-slate-700" onclick="toggleMobileMenu()">
+                            <i class="fa-solid fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header class="hero-bg h-screen flex items-center relative">
+        <div class="max-w-screen-xl mx-auto px-8 pt-12">
+            <div class="max-w-xl">
+                <div class="inline-flex items-center px-4 h-8 rounded-3xl bg-white/20 backdrop-blur-md border border-white/30 mb-6">
+                    <div class="flex items-center gap-x-2">
+                        <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse"></div>
+                        <span class="font-semibold text-sm text-white tracking-wider">EST. 2018 • GHANA</span>
+                    </div>
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl leading-[1.05] tracking-tighter font-black text-white">
+                    Derry Moore<br>
+                    <span class="font-bold text-teal-200">Number Hub</span>
+                </h1>
+                
+                <p class="mt-5 max-w-md text-lg text-white/90">
+                    Your trusted gateway to international phone numbers across continents.
+                    Connect seamlessly with Europe, America, Africa, Asia &amp; Australia.
+                </p>
+                
+                <div class="flex flex-wrap items-center gap-4 mt-8">
+                    <button onclick="document.getElementById('global').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 bg-white text-teal-800 hover:bg-teal-50 transition-all font-semibold text-base rounded-3xl shadow-xl flex items-center gap-x-2">
+                        <span>Explore Regions</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 border border-white/70 hover:bg-white/10 transition-all font-semibold text-white text-base rounded-3xl flex items-center gap-x-2">
+                        <span>Get in Touch</span>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-x-4 mt-10">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden"><img src="https://flagcdn.com/w40/us.png" class="w-full h-full object-cover"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden"><img src="https://flagcdn.com/w40/eu.png" class="w-full h-full object-cover"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden"><img src="https://flagcdn.com/w40/gh.png" class="w-full h-full object-cover"></div>
+                    </div>
+                    <div class="text-sm text-white/80">
+                        <span class="font-semibold">Over 120,000</span> connections made
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 hidden md:flex flex-col items-center">
+            <span class="text-xs font-medium text-white/60 tracking-widest mb-1">SCROLL TO EXPLORE</span>
+            <i class="fa-solid fa-chevron-down text-white/70 animate-bounce"></i>
+        </div>
+    </header>
+
+    <!-- Global Reach / Flags Section -->
+    <section id="global" class="max-w-screen-xl mx-auto px-8 pt-16 pb-8">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-9">
+            <div>
+                <div class="inline px-4 py-1.5 bg-teal-100 text-teal-700 rounded-3xl text-xs font-bold tracking-wider">WORLDWIDE COVERAGE</div>
+                <h2 class="section-header mt-2">Global Number Access</h2>
+                <p class="text-slate-600 max-w-md mt-1.5">Connect with premium international numbers across 5 major regions.</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <a href="#" class="inline-flex items-center text-sm font-semibold text-teal-700 hover:text-teal-800">
+                    View all regions <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Flags Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            
+            <!-- Europe Flag -->
+            <div class="flag-card bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <img src="https://flagcdn.com/w320/eu.png" alt="European Union Flag" class="flag-img">
+                    </div>
+                    <div class="px-3 py-1 text-xs font-bold bg-blue-100 text-blue-700 rounded-2xl flex items-center">
+                        <i class="fa-solid fa-globe mr-1.5 text-xs"></i> 
+                        <span class="font-bold">EU</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl text-slate-900">Europe</h4>
+                    <p class="text-sm text-slate-500 mt-0.5">EU, UK, Germany, France &amp; more</p>
+                    
+                    <div class="mt-4 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-emerald-600 font-medium">12,450 active numbers</span>
+                        </div>
+                        <button onclick="contactRegion('Europe')" class="text-xs px-3.5 py-1.5 font-semibold bg-teal-700 hover:bg-teal-800 transition-colors text-white rounded-2xl text-center flex items-center justify-center">
+                            <span class="text-xs">Browse</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- America Flag -->
+            <div class="flag-card bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <img src="https://flagcdn.com/w320/us.png" alt="United States Flag" class="flag-img">
+                    </div>
+                    <div class="px-3 py-1 text-xs font-bold bg-orange-100 text-orange-700 rounded-2xl flex items-center">
+                        <i class="fa-solid fa-globe mr-1.5 text-xs"></i> 
+                        <span class="font-bold">USA</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl text-slate-900">America</h4>
+                    <p class="text-sm text-slate-500 mt-0.5">USA, Canada, Mexico &amp; Latin America</p>
+                    
+                    <div class="mt-4 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-emerald-600 font-medium">28,900 active numbers</span>
+                        </div>
+                        <button onclick="contactRegion('America')" class="text-xs px-3.5 py-1.5 font-semibold bg-teal-700 hover:bg-teal-800 transition-colors text-white rounded-2xl text-center flex items-center justify-center">
+                            <span class="text-xs">Browse</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Africa Flag -->
+            <div class="flag-card bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <img src="https://flagcdn.com/w320/gh.png" alt="Ghana Flag" class="flag-img">
+                    </div>
+                    <div class="px-3 py-1 text-xs font-bold bg-emerald-100 text-emerald-700 rounded-2xl flex items-center">
+                        <i class="fa-solid fa-globe mr-1.5 text-xs"></i> 
+                        <span class="font-bold">GH</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl text-slate-900">Africa</h4>
+                    <p class="text-sm text-slate-500 mt-0.5">Ghana, Nigeria, South Africa &amp; more</p>
+                    
+                    <div class="mt-4 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-emerald-600 font-medium">41,200 active numbers</span>
+                        </div>
+                        <button onclick="contactRegion('Africa')" class="text-xs px-3.5 py-1.5 font-semibold bg-teal-700 hover:bg-teal-800 transition-colors text-white rounded-2xl text-center flex items-center justify-center">
+                            <span class="text-xs">Browse</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Asia Flag -->
+            <div class="flag-card bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <img src="https://flagcdn.com/w320/cn.png" alt="China Flag" class="flag-img">
+                    </div>
+                    <div class="px-3 py-1 text-xs font-bold bg-orange-100 text-orange-700 rounded-2xl flex items-center">
+                        <i class="fa-solid fa-globe mr-1.5 text-xs"></i> 
+                        <span class="font-bold">CN</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl text-slate-900">Asia</h4>
+                    <p class="text-sm text-slate-500 mt-0.5">China, India, Japan, Singapore &amp; more</p>
+                    
+                    <div class="mt-4 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-emerald-600 font-medium">35,650 active numbers</span>
+                        </div>
+                        <button onclick="contactRegion('Asia')" class="text-xs px-3.5 py-1.5 font-semibold bg-teal-700 hover:bg-teal-800 transition-colors text-white rounded-2xl text-center flex items-center justify-center">
+                            <span class="text-xs">Browse</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Australia Flag -->
+            <div class="flag-card bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <img src="https://flagcdn.com/w320/au.png" alt="Australia Flag" class="flag-img">
+                    </div>
+                    <div class="px-3 py-1 text-xs font-bold bg-sky-100 text-sky-700 rounded-2xl flex items-center">
+                        <i class="fa-solid fa-globe mr-1.5 text-xs"></i> 
+                        <span class="font-bold">AU</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl text-slate-900">Australia</h4>
+                    <p class="text-sm text-slate-500 mt-0.5">Australia &amp; New Zealand</p>
+                    
+                    <div class="mt-4 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-emerald-600 font-medium">9,780 active numbers</span>
+                        </div>
+                        <button onclick="contactRegion('Australia')" class="text-xs px-3.5 py-1.5 font-semibold bg-teal-700 hover:bg-teal-800 transition-colors text-white rounded-2xl text-center flex items-center justify-center">
+                            <span class="text-xs">Browse</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- International Partners / Logos Section -->
+    <section id="logos" class="bg-white border-y border-slate-100 py-14">
+        <div class="max-w-screen-xl mx-auto px-8">
+            <div class="text-center mb-9">
+                <div class="inline px-4 py-1.5 bg-slate-100 text-slate-700 rounded-3xl text-xs font-bold tracking-wider">POWERED BY</div>
+                <h2 class="section-header mt-2">International Partners &amp; Foreign Sites</h2>
+                <p class="text-slate-600 max-w-md mx-auto mt-2">Integrated with leading global communication platforms</p>
+            </div>
+            
+            <div class="logo-grid grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-x-4 gap-y-9 items-center justify-items-center">
+                
+                <!-- Logo 1: WhatsApp -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-emerald-100 rounded-2xl group-hover:bg-emerald-200 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">WhatsApp</span>
+                </div>
+                
+                <!-- Logo 2: Telegram -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-sky-100 rounded-2xl group-hover:bg-sky-200 transition-colors">
+                        <i class="fa-brands fa-telegram text-sky-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Telegram</span>
+                </div>
+                
+                <!-- Logo 3: Signal -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-indigo-100 rounded-2xl group-hover:bg-indigo-200 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-indigo-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Signal</span>
+                </div>
+                
+                <!-- Logo 4: Skype -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-2xl group-hover:bg-blue-200 transition-colors">
+                        <i class="fa-brands fa-skype text-blue-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Skype</span>
+                </div>
+                
+                <!-- Logo 5: Google Voice -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-red-100 rounded-2xl group-hover:bg-red-200 transition-colors">
+                        <i class="fa-brands fa-google text-red-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Google Voice</span>
+                </div>
+                
+                <!-- Logo 6: Facebook Messenger -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-2xl group-hover:bg-blue-200 transition-colors">
+                        <i class="fa-brands fa-facebook-messenger text-blue-700 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Messenger</span>
+                </div>
+                
+                <!-- Logo 7: Viber -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-purple-100 rounded-2xl group-hover:bg-purple-200 transition-colors">
+                        <i class="fa-brands fa-viber text-purple-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Viber</span>
+                </div>
+                
+                <!-- Logo 8: Zoom -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-sky-100 rounded-2xl group-hover:bg-sky-200 transition-colors">
+                        <i class="fa-solid fa-video text-sky-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Zoom</span>
+                </div>
+                
+                <!-- Additional Foreign Sites Logos -->
+                
+                <!-- Logo 9: Slack -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-purple-100 rounded-2xl group-hover:bg-purple-200 transition-colors">
+                        <i class="fa-brands fa-slack text-purple-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Slack</span>
+                </div>
+                
+                <!-- Logo 10: Microsoft Teams -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-2xl group-hover:bg-blue-200 transition-colors">
+                        <i class="fa-brands fa-microsoft text-blue-700 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Teams</span>
+                </div>
+                
+                <!-- Logo 11: Discord -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-indigo-100 rounded-2xl group-hover:bg-indigo-200 transition-colors">
+                        <i class="fa-brands fa-discord text-indigo-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Discord</span>
+                </div>
+                
+                <!-- Logo 12: LINE -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-green-100 rounded-2xl group-hover:bg-green-200 transition-colors">
+                        <i class="fa-brands fa-line text-green-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">LINE</span>
+                </div>
+                
+                <!-- Logo 13: WeChat -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-emerald-100 rounded-2xl group-hover:bg-emerald-200 transition-colors">
+                        <i class="fa-brands fa-weixin text-emerald-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">WeChat</span>
+                </div>
+                
+                <!-- Logo 14: Twilio -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-red-100 rounded-2xl group-hover:bg-red-200 transition-colors">
+                        <span class="font-black text-red-600 text-3xl">T</span>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Twilio</span>
+                </div>
+                
+                <!-- Logo 15: LinkedIn -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-2xl group-hover:bg-blue-200 transition-colors">
+                        <i class="fa-brands fa-linkedin text-blue-700 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">LinkedIn</span>
+                </div>
+                
+                <!-- Logo 16: Instagram -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-pink-100 rounded-2xl group-hover:bg-pink-200 transition-colors">
+                        <i class="fa-brands fa-instagram text-pink-600 text-4xl"></i>
+                    </div>
+                    <span class="mt-2 text-xs font-bold text-slate-600">Instagram</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="max-w-screen-xl mx-auto px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 py-7 border-b border-slate-200">
+            <div class="flex items-center justify-center md:justify-start gap-x-4">
+                <div>
+                    <div class="font-black text-4xl text-teal-800">142k</div>
+                    <div class="text-xs font-medium text-slate-500 -mt-1">Numbers Issued</div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center md:justify-start gap-x-4">
+                <div>
+                    <div class="font-black text-4xl text-teal-800">87</div>
+                    <div class="text-xs font-medium text-slate-500 -mt-1">Countries Served</div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center md:justify-start gap-x-4">
+                <div>
+                    <div class="font-black text-4xl text-teal-800">24/7</div>
+                    <div class="text-xs font-medium text-slate-500 -mt-1">Support Available</div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center md:justify-start gap-x-4">
+                <div>
+                    <div class="font-black text-4xl text-teal-800">98%</div>
+                    <div class="text-xs font-medium text-slate-500 -mt-1">Customer Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section (Ghana Cedis) -->
+    <section id="pricing" class="max-w-screen-xl mx-auto px-8 py-16 bg-slate-50">
+        <div class="text-center mb-10">
+            <div class="inline px-4 py-1.5 bg-sky-100 text-sky-700 rounded-3xl text-xs font-bold tracking-wider">GHANA PRICING</div>
+            <h2 class="section-header mt-3">Monthly Number Plans</h2>
+            <p class="text-slate-600 max-w-md mx-auto mt-2">Affordable international numbers in Ghana Cedis (GHS)</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            
+            <!-- WhatsApp -->
+            <div class="pricing-card bg-white border border-emerald-100 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-emerald-100 rounded-2xl">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">WhatsApp</span>
+                        <div class="text-xs text-emerald-600 font-bold">MOST POPULAR</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵100</span>
+                        <span class="text-slate-500 ml-1">— ₵200</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Premium WhatsApp Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Unlimited messages &amp; calls</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Instant activation</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('WhatsApp')" class="mt-6 w-full py-3 bg-emerald-600 hover:bg-emerald-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get WhatsApp Number
+                </button>
+            </div>
+            
+            <!-- Telegram -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-sky-100 rounded-2xl">
+                        <i class="fa-brands fa-telegram text-sky-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">Telegram</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵70</span>
+                        <span class="text-slate-500 ml-1">— ₵180</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Premium Telegram Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Secure &amp; private messaging</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Group &amp; channel support</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('Telegram')" class="mt-6 w-full py-3 bg-sky-600 hover:bg-sky-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get Telegram Number
+                </button>
+            </div>
+            
+            <!-- Google Voice -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-2xl">
+                        <i class="fa-brands fa-google text-red-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">Google Voice</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵100</span>
+                        <span class="text-slate-500 ml-1">— ₵200</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Google Voice Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Call forwarding &amp; voicemail</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Works with Google services</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('Google Voice')" class="mt-6 w-full py-3 bg-red-600 hover:bg-red-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get Google Voice Number
+                </button>
+            </div>
+            
+            <!-- Messenger -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-2xl">
+                        <i class="fa-brands fa-facebook-messenger text-blue-700 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">Messenger</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵100</span>
+                        <span class="text-slate-500 ml-1">— ₵150</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Facebook Messenger Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Video &amp; voice calls</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Instant chat support</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('Messenger')" class="mt-6 w-full py-3 bg-blue-700 hover:bg-blue-800 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get Messenger Number
+                </button>
+            </div>
+            
+            <!-- Zoom -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-sky-100 rounded-2xl">
+                        <i class="fa-solid fa-video text-sky-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">Zoom</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵100</span>
+                        <span class="text-slate-500 ml-1">— ₵150</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Zoom Phone Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>HD video meetings</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Business &amp; personal use</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('Zoom')" class="mt-6 w-full py-3 bg-sky-600 hover:bg-sky-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get Zoom Number
+                </button>
+            </div>
+            
+            <!-- WeChat -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-emerald-100 rounded-2xl">
+                        <i class="fa-brands fa-weixin text-emerald-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">WeChat</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵100</span>
+                        <span class="text-slate-500 ml-1">— ₵150</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>WeChat Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Secure messaging &amp; payments</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>China &amp; global access</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('WeChat')" class="mt-6 w-full py-3 bg-emerald-600 hover:bg-emerald-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get WeChat Number
+                </button>
+            </div>
+            
+            <!-- Discord -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-indigo-100 rounded-2xl">
+                        <i class="fa-brands fa-discord text-indigo-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">Discord</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵150</span>
+                        <span class="text-slate-500 ml-1">— ₵300</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Premium Discord Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Voice, video &amp; text chat</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Server &amp; community access</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('Discord')" class="mt-6 w-full py-3 bg-indigo-600 hover:bg-indigo-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get Discord Number
+                </button>
+            </div>
+            
+            <!-- Twitch -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-2xl">
+                        <i class="fa-brands fa-twitch text-purple-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">Twitch</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵200</span>
+                        <span class="text-slate-500 ml-1">— ₵300</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Twitch Phone Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Live streaming integration</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Creator &amp; viewer features</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('Twitch')" class="mt-6 w-full py-3 bg-purple-600 hover:bg-purple-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get Twitch Number
+                </button>
+            </div>
+            
+            <!-- POF -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-orange-100 rounded-2xl">
+                        <i class="fa-solid fa-fish text-orange-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">POF</span>
+                        <div class="text-xs text-orange-600 font-bold">Plenty of Fish</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵150</span>
+                        <span class="text-slate-500 ml-1">— ₵250</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>POF Dating Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Match &amp; messaging</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Private &amp; secure</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('POF')" class="mt-6 w-full py-3 bg-orange-600 hover:bg-orange-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get POF Number
+                </button>
+            </div>
+            
+            <!-- eHarmony -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-pink-100 rounded-2xl">
+                        <i class="fa-solid fa-heart text-pink-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">eHarmony</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵100</span>
+                        <span class="text-slate-500 ml-1">— ₵250</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>eHarmony Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Dating &amp; matching platform</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Private &amp; secure</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('eHarmony')" class="mt-6 w-full py-3 bg-pink-600 hover:bg-pink-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get eHarmony Number
+                </button>
+            </div>
+            
+            <!-- PayPal -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-2xl">
+                        <i class="fa-brands fa-paypal text-blue-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">PayPal</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵130</span>
+                        <span class="text-slate-500 ml-1">— ₵250</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>PayPal Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Secure payments &amp; transfers</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Global business &amp; personal use</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('PayPal')" class="mt-6 w-full py-3 bg-blue-600 hover:bg-blue-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get PayPal Number
+                </button>
+            </div>
+            
+            <!-- Venmo -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-sky-100 rounded-2xl">
+                        <i class="fa-brands fa-vimeo-v text-sky-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">Venmo</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵100</span>
+                        <span class="text-slate-500 ml-1">— ₵180</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Venmo Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Easy peer-to-peer payments</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Social payment experience</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('Venmo')" class="mt-6 w-full py-3 bg-sky-600 hover:bg-sky-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get Venmo Number
+                </button>
+            </div>
+            
+            <!-- Cash App -->
+            <div class="bg-white border border-slate-200 p-7 rounded-3xl shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-2xl">
+                        <i class="fa-brands fa-square text-green-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl">Cash App</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black">₵100</span>
+                        <span class="text-slate-500 ml-1">— ₵220</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">per month</div>
+                </div>
+                
+                <div class="mt-6 flex-1">
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Cash App Number</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Instant money transfers</span></li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600 w-4"></i> <span>Bitcoin &amp; investing features</span></li>
+                    </ul>
+                </div>
+                
+                <button onclick="contactForService('Cash App')" class="mt-6 w-full py-3 bg-green-600 hover:bg-green-700 transition-colors text-white font-extrabold rounded-3xl text-sm">
+                    Get Cash App Number
+                </button>
+            </div>
+            
+        </div>
+        
+        <div class="text-center mt-8">
+            <p class="text-xs text-slate-500">All prices are in Ghana Cedis (GHS) • 14-day money-back guarantee</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-screen-xl mx-auto px-8 pt-12 pb-20">
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Contact Info -->
+            <div class="md:col-span-7">
+                <div class="max-w-md">
+                    <div class="px-5 py-1.5 inline-flex bg-sky-100 text-sky-700 rounded-3xl text-xs font-extrabold tracking-[1.5px]">DIRECT CONTACT</div>
+                    <h2 class="section-header mt-3">Ready to get your<br>international number?</h2>
+                    
+                    <div class="mt-5 text-slate-600">
+                        Reach out to Derry Moore directly via phone or WhatsApp for immediate assistance with your international number needs.
+                    </div>
+                    
+                    <div class="mt-7 space-y-4">
+                        <!-- Phone -->
+                        <div class="flex items-center gap-x-4 bg-white border border-slate-200 px-5 py-4 rounded-3xl shadow-sm">
+                            <div class="w-12 h-12 flex-shrink-0 bg-sky-600 text-white flex items-center justify-center rounded-2xl">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-medium text-sm text-slate-500">Telephone</div>
+                                <a href="tel:+233501185921" class="block font-bold text-xl text-slate-900 hover:text-teal-700 transition-colors">+233 501 185 921</a>
+                            </div>
+                            <div>
+                                <a href="tel:+233501185921" class="px-4 py-2 text-xs bg-teal-700 text-white font-bold rounded-2xl flex items-center justify-center hover:bg-teal-800 transition-colors">
+                                    <span>Call</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- WhatsApp -->
+                        <div class="flex items-center gap-x-4 bg-white border border-slate-200 px-5 py-4 rounded-3xl shadow-sm">
+                            <div class="w-12 h-12 flex-shrink-0 bg-sky-600 text-white flex items-center justify-center rounded-2xl">
+                                <i class="fa-brands fa-whatsapp text-3xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-medium text-sm text-slate-500">WhatsApp</div>
+                                <a href="https://wa.me/233242806605" target="_blank" class="block font-bold text-xl text-slate-900 hover:text-emerald-600 transition-colors">+233 242 806 605</a>
+                            </div>
+                            <div>
+                                <a href="https://wa.me/233242806605" target="_blank" 
+                                   class="px-4 py-2 text-xs bg-emerald-600 text-white font-bold rounded-2xl flex items-center justify-center hover:bg-emerald-700 transition-colors">
+                                    <span>Chat</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Card -->
+            <div class="md:col-span-5">
+                <div class="bg-gradient-to-br from-teal-700 to-teal-800 p-1 rounded-3xl shadow-xl">
+                    <div class="bg-white rounded-[22px] p-7">
+                        <div class="flex items-center mb-5">
+                            <div>
+                                <div class="font-bold text-xl">Need a custom number?</div>
+                                <div class="text-teal-700 font-medium">Premium international lines available</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <div class="flex items-center text-sm">
+                                <i class="fa-solid fa-check text-emerald-600 w-4 mr-2"></i> 
+                                <span class="font-medium">Instant activation</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fa-solid fa-check text-emerald-600 w-4 mr-2"></i> 
+                                <span class="font-medium">24-hour support</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fa-solid fa-check text-emerald-600 w-4 mr-2"></i> 
+                                <span class="font-medium">Secure &amp; private</span>
+                            </div>
+                        </div>
+                        
+                        <button onclick="contactRegion('Custom Number')" 
+                                class="mt-6 w-full bg-teal-700 hover:bg-teal-800 transition-colors text-white font-extrabold py-4 rounded-3xl flex items-center justify-center text-sm">
+                            <span>Request Custom Number</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300">
+        <div class="max-w-screen-xl mx-auto px-8 py-9">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-3">
+                <div class="flex items-center gap-x-2">
+                    <div class="w-9 h-9 bg-teal-700 flex items-center justify-center rounded-2xl">
+                        <i class="fa-solid fa-globe text-white"></i>
+                    </div>
+                    <span class="font-semibold text-white">Derry Moore Number Hub</span>
+                </div>
+                
+                <div class="text-xs text-center md:text-left">
+                    &copy; 2026 Derry Moore Number Hub. All rights reserved. Ghana • Global Reach
+                </div>
+                
+                <div class="flex justify-center md:justify-end items-center gap-x-4 text-sm">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#0f766e');
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const nav = document.querySelector('nav');
+            const mobileNav = document.createElement('div');
+            
+            mobileNav.className = `md:hidden fixed inset-0 bg-white z-[100] flex flex-col p-8`;
+            mobileNav.innerHTML = `
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-11 h-11 bg-teal-800 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-globe text-white text-3xl"></i>
+                        </div>
+                        <span class="font-bold text-3xl tracking-tighter text-slate-900">Derry Moore</span>
+                    </div>
+                    <button class="text-3xl text-slate-400" onclick="this.parentElement.remove()">×</button>
+                </div>
+                
+                <div class="flex flex-col gap-y-1 text-lg">
+                    <a href="#global" class="py-3 px-2 font-medium text-slate-700 border-b border-slate-100">Global Reach</a>
+                    <a href="#logos" class="py-3 px-2 font-medium text-slate-700 border-b border-slate-100">International Partners</a>
+                    <a href="#pricing" class="py-3 px-2 font-medium text-slate-700 border-b border-slate-100">Pricing</a>
+                    <a href="#contact" class="py-3 px-2 font-medium text-slate-700 border-b border-slate-100">Contact</a>
+                </div>
+                
+                <div class="mt-auto pt-8">
+                    <a href="tel:+233501185921" class="flex w-full items-center justify-center gap-x-2 px-6 py-4 text-sm font-semibold bg-white border border-slate-300 rounded-3xl text-slate-700 mb-3">
+                        <i class="fa-solid fa-phone"></i> 
+                        <span>Call +233 501 185 921</span>
+                    </a>
+                    
+                    <a href="https://wa.me/233242806605" class="flex w-full items-center justify-center gap-x-2 px-6 py-4 text-sm font-semibold bg-emerald-600 text-white rounded-3xl">
+                        <i class="fa-brands fa-whatsapp"></i> 
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+            `;
+            
+            document.body.appendChild(mobileNav);
+        }
+        
+        // Contact region function
+        function contactRegion(region) {
+            const contactSection = document.getElementById('contact');
+            
+            if (region === 'Custom Number') {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    alert(`Thank you! A representative from Derry Moore Number Hub will contact you shortly regarding your ${region} request.`);
+                }, 1100);
+            } else {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                
+                setTimeout(() => {
+                    const msg = `Hi! I'm interested in getting international numbers from the ${region} region.`;
+                    const whatsappLink = `https://wa.me/233242806605?text=${encodeURIComponent(msg)}`;
+                    window.open(whatsappLink, '_blank');
+                }, 1400);
+            }
+        }
+
+        // Contact for specific service
+        function contactForService(service) {
+            const contactSection = document.getElementById('contact');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+            
+            setTimeout(() => {
+                const msg = `Hi Derry Moore! I'm interested in the ${service} number plan (₵ pricing in Ghana Cedis). Please provide more details.`;
+                const whatsappLink = `https://wa.me/233242806605?text=${encodeURIComponent(msg)}`;
+                window.open(whatsappLink, '_blank');
+            }, 1300);
+        }
+        
+        // Add subtle animations on scroll for flags
+        function addScrollAnimations() {
+            const flags = document.querySelectorAll('.flag-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transitionDelay = Math.random() * 150 + 'ms';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            flags.forEach(flag => {
+                flag.style.opacity = '0.9';
+                flag.style.transform = 'translateY(15px)';
+                observer.observe(flag);
+            });
+        }
+        
+        // Keyboard accessibility
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "?" && document.activeElement.tagName === "BODY") {
+                    e.preventDefault();
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+            
+            // Easter egg: press "d" for Derry
+            let keys = [];
+            document.addEventListener('keypress', function(e) {
+                keys.push(e.key);
+                if (keys.length > 3) keys.shift();
+                
+                if (keys.join('') === 'der') {
+                    const logo = document.querySelector('.fa-globe');
+                    if (logo) {
+                        logo.classList.add('fa-spin');
+                        setTimeout(() => {
+                            logo.classList.remove('fa-spin');
+                        }, 1800);
+                    }
+                    keys = [];
+                }
+            });
+        }
+        
+        // Initialize everything
+        function initializeWebsite() {
+            initializeTailwind();
+            addScrollAnimations();
+            setupKeyboardShortcuts();
+            
+            // Easter egg tooltip on logo
+            const navLogo = document.querySelector('nav .fa-globe');
+            if (navLogo) {
+                navLogo.parentElement.addEventListener('click', function() {
+                    navLogo.classList.toggle('fa-spin');
+                    setTimeout(function() {
+                        navLogo.classList.remove('fa-spin');
+                    }, 1400);
+                });
+            }
+            
+            // Make sure all external links are secure
+            console.log('%c[Derry Moore Number Hub] Website initialized successfully.', 'color:#64748b');
+        }
+        
+        // Boot the website
+        window.onload = initializeWebsite;
+    </script>
+</body>
+</html>
